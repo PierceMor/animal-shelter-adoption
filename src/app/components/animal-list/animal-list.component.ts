@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { sampleDogData } from '../../models/animal';
+import { Animal } from '../../models/animal';
+import { Observable } from 'rxjs/Observable';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-animal-list',
@@ -7,6 +9,10 @@ import { sampleDogData } from '../../models/animal';
   styleUrls: ['./animal-list.component.css']
 })
 export class AnimalListComponent implements OnInit {
+
+  public animals: Observable<any[]>;
+  // animals = sampleDogData;
+
   ages = [
     { value: '<1-0', viewValue: '< 1 year' },
     { value: '1-3-1', viewValue: '1-3 years' },
@@ -18,7 +24,6 @@ export class AnimalListComponent implements OnInit {
     { value: 'female-0', viewValue: 'Female' },
     { value: 'male-1', viewValue: 'Male' }
   ];
-  animals = sampleDogData;
 
   energyLevels = [
     { value: 'low-0', viewValue: 'Low' },
@@ -51,7 +56,9 @@ export class AnimalListComponent implements OnInit {
     { value: 'no-1', viewValue: 'No' },
   ];
 
-  constructor() { }
+  constructor(db: AngularFirestore) {
+    this.animals = db.collection('/animals').valueChanges();
+  }
 
   ngOnInit() { }
 }
