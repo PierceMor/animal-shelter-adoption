@@ -1,0 +1,5 @@
+.carousel, .carousel:focus {
+    width: calc(100% + 48px) !important;
+    margin: 0 -24px 16px -24px !important;
+    outline: none;
+}

@@ -119,7 +119,8 @@ export const sampleDogData: any = [
         'attributes': ['M', 'RR', 'SP', 'TM'],
         'notes': 'Great walking buddy',
         'photo_urls': [
-            'http://petharbor.com/get_image.asp?RES=Detail&ID=A768706&LOCATION=ASTN'
+            'http://petharbor.com/get_image.asp?RES=Detail&ID=A768706&LOCATION=ASTN',
+            'http://petharbor.com/get_image.asp?RES=Detail&ID=A767004&LOCATION=ASTN'
         ]
     }),
     new Animal({
