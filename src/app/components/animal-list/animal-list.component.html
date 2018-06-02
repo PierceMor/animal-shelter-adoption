@@ -1,5 +1,99 @@
-<div class="row">
-  <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 m-2">
-    <app-animal-card></app-animal-card>
+<div class="row" id="filter-row">
+
+  <!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+  <div class="col-sm">
+
+    <mat-form-field>
+      <mat-select placeholder="Age">
+        <mat-option *ngFor="let age of ages" [value]="age.value">
+          {{ age.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+  <div class="col-sm">
+
+    <mat-form-field>
+      <mat-select placeholder="Sex">
+        <mat-option *ngFor="let sex of sexes" [value]="sex.value">
+          {{ sex.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+  <div class="col-sm">
+
+    <mat-form-field>
+      <mat-select placeholder="Energy level">
+        <mat-option *ngFor="let energyLevel of energyLevels" [value]="energyLevel.value">
+          {{ energyLevel.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+  <div class="col-sm">
+
+    <mat-form-field>
+      <mat-select placeholder="Weight">
+        <mat-option *ngFor="let weight of weights" [value]="weight.value">
+          {{ weight.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div class="col-sm">
+
+    <mat-form-field>
+      <mat-select placeholder="Days in shelter">
+        <mat-option *ngFor="let day of days" [value]="day.value">
+          {{ day.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div class="col-sm">
+
+    <mat-form-field>
+      <mat-select placeholder="Compatibility">
+        <mat-option *ngFor="let compatibility of compatibilities" [value]="compatibility.value">
+          {{ compatibility.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div class="col-sm">
+
+    <mat-form-field>
+      <mat-select placeholder="House-trained">
+        <mat-option *ngFor="let houseTrained of houseTraineds" [value]="houseTrained.value">
+          {{ houseTrained.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let animal of animals" class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 p-2">
+      <app-animal-card [animal]="animal"></app-animal-card>
+    </div>
   </div>
 </div>
