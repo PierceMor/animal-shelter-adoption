@@ -5,7 +5,6 @@ import { AnimalListComponent } from './components/animal-list/animal-list.compon
 import { AnimalInfoComponent } from './components/animal-info/animal-info.component';
 
 export const appRoutes: Routes = [
-    { path: '', component: LandingPageComponent },
-    { path: 'dogs', component: AnimalListComponent },
-    { path: 'dogs/:tagId', component: AnimalInfoComponent }
+    { path: '', component: AnimalListComponent },
+    { path: ':tagId', component: AnimalInfoComponent },
 ];
