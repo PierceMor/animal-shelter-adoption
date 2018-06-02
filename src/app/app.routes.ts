@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { AnimalCardComponent } from './components/animal-card/animal-card.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { AnimalListComponent } from './components/animal-list/animal-list.component';
+import { AnimalInfoComponent } from './components/animal-info/animal-info.component';
 
 export const appRoutes: Routes = [
     { path: '', component: LandingPageComponent },
-    { path: 'animals', component: AnimalCardComponent }
+    { path: 'dogs', component: AnimalListComponent },
+    { path: 'dogs/:id', component: AnimalInfoComponent }
 ];
