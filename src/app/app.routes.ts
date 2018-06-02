@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LostComponent } from './components/lost/lost.component';
 
 export const appRoutes: Routes = [
+    { path: '**', redirectTo: '/animals', pathMatch: 'full' },
     { path: 'animals', component: AnimalListComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'lost', component: LostComponent },
