@@ -10,7 +10,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
+
 
 import { CarouselModule } from 'angular-bootstrap-md';
 
@@ -23,6 +28,8 @@ import { AnimalInfoComponent } from './components/animal-info/animal-info.compon
 import { ContactComponent } from './components/contact/contact.component';
 import { LostComponent } from './components/lost/lost.component';
 import { AnimalCardComponent } from './components/animal-card/animal-card.component';
+import { UpdateDocumentComponent } from './components/update-document/update-document.component';
+import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AnimalService } from './services/animal.service';
 
@@ -36,15 +43,21 @@ import { AnimalService } from './services/animal.service';
     ContactComponent,
     LostComponent,
     AnimalInfoComponent,
-    AnimalCardComponent
+    AnimalCardComponent,
+    UpdateDocumentComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatNativeDateModule,
+    FormsModule,
     MatToolbarModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
+    MatInputModule,
+    MatRadioModule,
+    MatDatepickerModule,
     MatSelectModule,
     AngularFirestoreModule,
     CarouselModule.forRoot(),
