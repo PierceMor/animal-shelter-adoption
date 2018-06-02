@@ -12,22 +12,30 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Kennel"  [(ngModel)]="animal.kennel" >
+      <input matInput placeholder="Kennel #"  [(ngModel)]="animal.kennel" >
     </mat-form-field>
 
 
     <label>Sex: </label>
       <mat-radio-group [(ngModel)]="animal.sex">
-        <mat-radio-button value="Male">Male</mat-radio-button>
-        <mat-radio-button value="Female">Female</mat-radio-button>
+        <mat-radio-button [value]="gender.MALE">Male</mat-radio-button>
+        <mat-radio-button [value]="gender.FEMALE">Female</mat-radio-button>
       </mat-radio-group>
 
+      {{animal.sex}}
+
       <mat-form-field>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="animal.dob" placeholder="Date of Birth">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <input matInput [matDatepicker]="dob" [(ngModel)]="animal.dob" placeholder="Date of Birth">
+        <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+        <mat-datepicker #dob></mat-datepicker>
       </mat-form-field>
 
+      <mat-form-field>
+          <input matInput [matDatepicker]="intakeDate" [(ngModel)]="animal.intake_date" placeholder="Date Kenneled">
+          <mat-datepicker-toggle matSuffix [for]="intakeDate"></mat-datepicker-toggle>
+          <mat-datepicker #intakeDate></mat-datepicker>
+        </mat-form-field>
+  
 
       <mat-form-field>
         <input matInput placeholder="Weight" [(ngModel)]="animal.weight" type="number" class="example-right-align">
@@ -36,10 +44,12 @@
 
       <label>Energy Level: </label>
         <mat-radio-group [(ngModel)]="animal.energy" >
-          <mat-radio-button value="Green">Green</mat-radio-button>
-          <mat-radio-button value="Blue">Blue</mat-radio-button>
-          <mat-radio-button value="Orange">Orange</mat-radio-button>
+          <mat-radio-button [value]="energy.LOW">Low</mat-radio-button>
+          <mat-radio-button [value]="energy.MODERATE">Moderate</mat-radio-button>
+          <mat-radio-button [value]="energy.HIGH">High</mat-radio-button>
         </mat-radio-group>
+
+        {{animal.energy}}
 
         <label>Dog-Friendly: </label>
         <mat-radio-group [(ngModel)]="animal.dFriend" >

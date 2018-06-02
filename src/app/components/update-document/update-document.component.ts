@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Animal } from '../../models/animal';
+import { Animal, Gender, Energy_Level } from '../../models/animal';
 
 @Component({
   selector: 'app-update-document',
@@ -9,6 +9,9 @@ import { Animal } from '../../models/animal';
 export class UpdateDocumentComponent implements OnInit {
 
   animal: Animal = new Animal();
+  gender  = Gender;
+  energy = Energy_Level;
+
 
   constructor(
     
@@ -19,6 +22,7 @@ export class UpdateDocumentComponent implements OnInit {
   
   update(){
     console.log(this.animal)
+    
   }
 
 }
