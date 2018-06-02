@@ -92,7 +92,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div *ngFor="let animal of animals" class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 p-2">
+    <div *ngFor="let animal of animals | async" class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 p-2">
       <app-animal-card [animal]="animal"></app-animal-card>
     </div>
   </div>

@@ -12,7 +12,6 @@ export class AnimalInfoComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params);
       this.petId = params['tagId'];
     });
   }
