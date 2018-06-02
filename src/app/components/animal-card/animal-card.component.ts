@@ -20,7 +20,6 @@ export class AnimalCardComponent implements OnInit {
   }
 
   getPetInfo() {
-    console.log(this.animal.id);
     this.router.navigateByUrl(`/animals/${this.animal.id}`);
   }
 
