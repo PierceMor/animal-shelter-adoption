@@ -31,6 +31,7 @@ import { AnimalCardComponent } from './components/animal-card/animal-card.compon
 import { UpdateDocumentComponent } from './components/update-document/update-document.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
+import { AnimalService } from './services/animal.service';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { environment } from '../environments/environment';
       appRoutes
     )
   ],
-  providers: [],
+  providers: [AnimalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

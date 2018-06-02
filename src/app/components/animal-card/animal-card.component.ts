@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Animal, Gender, Energy_Level } from '../../models/animal';
+import { AnimalService } from '../../services/animal.service';
 
 @Component({
   selector: 'app-animal-card',
