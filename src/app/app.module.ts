@@ -10,6 +10,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 
+import { CarouselModule } from 'angular-bootstrap-md';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
@@ -40,6 +42,7 @@ import { AnimalCardComponent } from './components/animal-card/animal-card.compon
     MatCardModule,
     MatButtonModule,
     MatSelectModule,
+    CarouselModule.forRoot(),
     RouterModule.forRoot(
       appRoutes
     )
