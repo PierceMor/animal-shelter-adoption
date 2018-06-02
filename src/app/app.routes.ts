@@ -7,5 +7,5 @@ import { AnimalInfoComponent } from './components/animal-info/animal-info.compon
 export const appRoutes: Routes = [
     { path: '', component: LandingPageComponent },
     { path: 'dogs', component: AnimalListComponent },
-    { path: 'dogs/:id', component: AnimalInfoComponent }
+    { path: 'dogs/:tagId', component: AnimalInfoComponent }
 ];
