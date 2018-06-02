@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Animal, Gender, Energy_Level } from '../../models/animal';
 
 @Component({
   selector: 'app-animal-card',
@@ -8,13 +9,18 @@ import { Router } from '@angular/router';
 })
 export class AnimalCardComponent implements OnInit {
 
+  Gender = Gender;
+  EnergyLevel = Energy_Level;
+  @Input() animal: Animal;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   getPetInfo() {
-    this.router.navigateByUrl('a123');
+    console.log(this.animal.id);
+    this.router.navigateByUrl(`/animals/${this.animal.id}`);
   }
 
 }

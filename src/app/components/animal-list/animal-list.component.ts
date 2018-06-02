@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { sampleDogData } from '../../models/animal';
 
 @Component({
   selector: 'app-animal-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./animal-list.component.css']
 })
 export class AnimalListComponent implements OnInit {
+
+  animals = sampleDogData;
 
   constructor() { }
 
