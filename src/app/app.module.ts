@@ -12,6 +12,8 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { FooterComponent } from './components/footer/footer.component';
 import { AnimalListComponent } from './components/animal-list/animal-list.component';
 import { AnimalInfoComponent } from './components/animal-info/animal-info.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { LostComponent } from './components/lost/lost.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AnimalInfoComponent } from './components/animal-info/animal-info.compon
     LandingPageComponent,
     FooterComponent,
     AnimalListComponent,
-    AnimalInfoComponent
+    AnimalInfoComponent,
+    ContactComponent,
+    LostComponent
   ],
   imports: [
     BrowserModule,
