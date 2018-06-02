@@ -24,6 +24,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LostComponent } from './components/lost/lost.component';
 import { AnimalCardComponent } from './components/animal-card/animal-card.component';
 import { environment } from '../environments/environment';
+import { AnimalService } from './services/animal.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { environment } from '../environments/environment';
       appRoutes
     )
   ],
-  providers: [],
+  providers: [AnimalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
