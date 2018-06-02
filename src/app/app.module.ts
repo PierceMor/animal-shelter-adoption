@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -38,6 +39,7 @@ import { AnimalCardComponent } from './components/animal-card/animal-card.compon
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
+    MatSelectModule,
     RouterModule.forRoot(
       appRoutes
     )
