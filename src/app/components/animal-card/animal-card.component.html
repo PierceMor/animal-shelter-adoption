@@ -1,10 +1,45 @@
 <mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{animal.name}}</mat-card-title>
+    <mat-card-subtitle>{{animal.id}}</mat-card-subtitle>
+  </mat-card-header>
   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" (click)="getPetInfo()">
   <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
-      very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-    </p>
+    <div class="row">
+      <div class="col-6">
+        <div>
+          <strong>Gender: </strong>{{animal.sex === Gender.MALE ? 'Male' : 'Female'}}
+        </div>
+        <div>
+          <strong>DOB: </strong>{{animal.dob}}
+        </div>
+        <div>
+          <strong>Kennel #: </strong>{{animal.kennel}}
+        </div>
+        <div>
+          <strong>Energy Level: </strong>{{animal.energy_level}}
+        </div>
+      </div>
+      <div class="col-6">
+        <div>
+          <strong>Weight: </strong>{{animal.weight}}
+        </div>
+        <div>
+          <strong>Days in Shelter: </strong>{{animal.intake_date}}
+        </div>
+        <div>
+          <strong>Dog Friendly: </strong>{{animal.dog_friendly ? 'Yes' : 'No'}}
+        </div>
+        <div>
+          <strong>Cat Friendly: </strong>{{animal.cat_friendly ? 'Yes' : 'No'}}
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-12">
+        <strong>Notes: </strong>{{animal.notes}}
+      </div>
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="getPetInfo()">MORE INFO</button>
