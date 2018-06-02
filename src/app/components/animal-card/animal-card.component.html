@@ -3,7 +3,7 @@
     <mat-card-title>{{animal.name}}</mat-card-title>
     <mat-card-subtitle>{{animal.id}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" (click)="getPetInfo()">
+  <img *ngFor="let image of animal.photo_urls" mat-card-image [src]="image" alt="Photo of a Shiba Inu">
   <mat-card-content>
     <div class="row">
       <div class="col-6">

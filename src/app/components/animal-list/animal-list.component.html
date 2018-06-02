@@ -1,5 +1,5 @@
 <div class="row" id="filter-row">
-  
+
   <!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
   <div class="col-sm">
 
@@ -15,7 +15,7 @@
 
   <!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
   <div class="col-sm">
-    
+
     <mat-form-field>
       <mat-select placeholder="Sex">
         <mat-option *ngFor="let sex of sexes" [value]="sex.value">
@@ -24,7 +24,7 @@
       </mat-select>
     </mat-form-field>
 
-  </div> 
+  </div>
 
   <!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
   <div class="col-sm">
@@ -90,12 +90,10 @@
 
 </div>
 
-<div class="row">
 <div class="container-fluid">
   <div class="row">
     <div *ngFor="let animal of animals" class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 p-2">
       <app-animal-card [animal]="animal"></app-animal-card>
     </div>
   </div>
-
 </div>
