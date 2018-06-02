@@ -3,6 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './app.routes';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -21,6 +23,7 @@ import { AnimalInfoComponent } from './components/animal-info/animal-info.compon
 import { ContactComponent } from './components/contact/contact.component';
 import { LostComponent } from './components/lost/lost.component';
 import { AnimalCardComponent } from './components/animal-card/animal-card.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { AnimalCardComponent } from './components/animal-card/animal-card.compon
     MatCardModule,
     MatButtonModule,
     MatSelectModule,
+    AngularFirestoreModule,
     CarouselModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot(
       appRoutes
     )
