@@ -33,5 +33,6 @@ img {
 }
 
 li.nav-item a.nav-link.active {
-    color: orangered;
+    color: #d3313a;
+
 }
