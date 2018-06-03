@@ -25,7 +25,6 @@ export class UpdateDocumentComponent implements OnInit {
     this.animalService.animals.subscribe(animals => {
       if (animals && animals[0]) {
         this.animal = new Animal(animals[0]);
-        console.log(this.animal);
       }
     });
   }
@@ -35,5 +34,4 @@ export class UpdateDocumentComponent implements OnInit {
     this.animalService.addAnimal(this.animal);
     this.router.navigateByUrl('/animals');
   }
-
 }
