@@ -35,6 +35,7 @@ import { environment } from '../environments/environment';
 import { AnimalService } from './services/animal.service';
 import { AnimalFilterComponent } from './components/animal-filter/animal-filter.component';
 import { AnimalCardSingleComponent } from './components/animal-card-single/animal-card-single.component';
+import { HowToAdoptComponent } from './components/how-to-adopt/how-to-adopt.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AnimalCardSingleComponent } from './components/animal-card-single/anima
     AnimalCardComponent,
     UpdateDocumentComponent,
     AnimalFilterComponent,
-    AnimalCardSingleComponent
+    AnimalCardSingleComponent,
+    HowToAdoptComponent
   ],
   imports: [
     BrowserModule,
