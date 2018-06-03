@@ -1,12 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { Animal } from '../models/animal';
-import { QueryItem } from '../components/animal-filter/animal-filter.component';
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs/Observable";
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument
+} from "angularfire2/firestore";
+import { Animal } from "../models/animal";
+import { QueryItem } from "../components/animal-filter/animal-filter.component";
 
 @Injectable()
 export class AnimalService {
   private itemsCollection: AngularFirestoreCollection<Animal>;
+  private itemDoc: AngularFirestoreDocument<Animal>;
   public animals: Observable<any[]>;
   public allAnimals: Observable<any[]>;
   public activeAnimals: Observable<any[]>;
@@ -46,7 +51,9 @@ export class AnimalService {
   // creating a new function and not remaking 
   addAnimal(animal: Animal) {
     // this.db.collection<Animal>('/animals').add(animal);
-    this.itemsCollection.add(JSON.parse(JSON.stringify(animal)));
+    this.itemDoc = this.db.doc<Animal>("animals/" + animal.id);
+    this.itemDoc.update(JSON.parse(JSON.stringify(animal)));
+
   }
 
 
