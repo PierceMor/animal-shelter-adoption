@@ -10,6 +10,7 @@ export class Animal {
     attributes: string[];
     dog_friendly: boolean;
     cat_friendly: boolean;
+    kid_friendly: boolean;
     house_trained: boolean;
     notes: string;
     surgery_date: string;
@@ -28,6 +29,7 @@ export class Animal {
         this.attributes = (animal && animal.attributes) ? animal.attributes : [];
         this.dog_friendly = (animal && animal.dog_friendly) ? animal.dog_friendly : false;
         this.cat_friendly = (animal && animal.cat_friendly) ? animal.cat_friendly : false;
+        this.kid_friendly = animal && animal.kid_friendly ? animal.kid_friendly : false;
         this.house_trained = (animal && animal.house_trained) ? animal.house_trained : false;
         this.notes = (animal && animal.notes) ? animal.notes : '';
         this.surgery_date = (animal && animal.surgery_date) ? animal.surgery_date : '';
@@ -37,9 +39,9 @@ export class Animal {
 }
 
 export enum Energy_Level {
-    HIGH = 'orange',
-    MODERATE = 'blue',
-    LOW = 'green'
+    HIGH = 'high',
+    MODERATE = 'moderate',
+    LOW = 'low'
 }
 
 export enum Gender {

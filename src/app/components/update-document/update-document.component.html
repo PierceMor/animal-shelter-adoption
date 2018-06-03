@@ -57,11 +57,11 @@
       <mat-radio-button [value]="false">No</mat-radio-button>
     </mat-radio-group>
 
-    <label>Kid Friendly: </label>
+    <!-- <label>Kid Friendly: </label>
     <mat-radio-group [(ngModel)]="animal.kid_friendly">
       <mat-radio-button [value]="true">Yes</mat-radio-button>
       <mat-radio-button [value]="false">No</mat-radio-button>
-    </mat-radio-group>
+    </mat-radio-group> -->
 
 
     <label>House Trained: </label>
@@ -79,17 +79,17 @@
     </mat-radio-group>
     <!-- Need Picture Uploader. WTF -->
 
-    <input [(ngModel)]="animal.img" type="file" (change)="onFileChanged($event)" #fileInput class="d-none mt-2">
+    <!-- <input [(ngModel)]="animal.photo_urls" type="file" (change)="onFileChanged($event)" #fileInput class="d-none mt-2"> -->
 
-    <!-- <button mat-raised-button class="mt-2">Upload Photo</button> -->
+    <!-- <button mat-raised-button class="mt-2">Upload Photo</button>
 
-    <!-- <button mat-raised-button class="mt-2" (click)="update();">Submit Form</button> -->
+      <button mat-raised-button class="mt-2" (click)="update();">Submit Form</button> -->
   </div>
 
   <div class="button-container">
 
     <br/>
-    <button mat-stroked-button class='update-button'>Select Picture</button>
+    <button mat-stroked-button>Select Picture</button>
     <br/>
     <br/>
     <button mat-stroked-button color=primary class="mt-2" (click)="update();" class='update-button'>Submit Form</button>
