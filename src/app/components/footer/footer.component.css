@@ -1,9 +1,10 @@
 footer {
   /* padding-top: 15px; */
   /* background: #f8f9fa; */
-  background: #484848;
+  /* background: #484848; */
+  background: #f8f9fa;
   font-family: Oswald;
-  color: #fff;
+  color: #444;
   margin-top: 50px;
   font-size: 0.9rem;
   padding: 20px;
@@ -11,6 +12,6 @@ footer {
 }
 
 a {
-  color: #fff;
+  color: #444;
   text-decoration: underline;
 }
