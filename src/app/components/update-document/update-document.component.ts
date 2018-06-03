@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal, Gender, Energy_Level } from '../../models/animal';
+import { AnimalService } from '../../services/animal.service';
 
 @Component({
   selector: 'app-update-document',
@@ -13,15 +14,14 @@ export class UpdateDocumentComponent implements OnInit {
   energy = Energy_Level;
 
 
-  constructor(
-    
-  ) { }
+  constructor(private animalService: AnimalService) { }
 
   ngOnInit() {
   }
   
   update(){
-    console.log(this.animal)
+    console.log(this.animal);
+    this.animalService.addAnimal(this.animal);
     
   }
 
