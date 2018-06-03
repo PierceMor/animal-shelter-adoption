@@ -4,9 +4,12 @@
 
 body {
   min-height: 100vh;
+  color: #444;
   /* position: relative; */
 }
 
 #router-div {
   min-height: 100vh;
+  color: #444;
+  font-family: Oswald;
 }

@@ -1,12 +1,13 @@
 footer {
-  padding-top: 15px;
+  /* padding-top: 15px; */
   /* background: #f8f9fa; */
   background: #484848;
-
-
+  font-family: Oswald;
   color: #fff;
   margin-top: 50px;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  padding: 20px;
+  text-align: center;
 }
 
 a {
