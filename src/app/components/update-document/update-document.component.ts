@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal, Gender, Energy_Level } from '../../models/animal';
 import { AnimalService } from '../../services/animal.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-document',
@@ -11,15 +11,15 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateDocumentComponent implements OnInit {
 
   animal: Animal = new Animal();
-  gender  = Gender;
+  gender = Gender;
   energy = Energy_Level;
 
-  constructor(private animalService: AnimalService, route: ActivatedRoute ) { 
+  constructor(private animalService: AnimalService, private router: Router, route: ActivatedRoute) {
     route.params.subscribe(params => {
-    this.animal.id = params['tagId'];
-    this.animalService.getAnimalById(this.animal.id);
+      this.animal.id = params['tagId'];
+      this.animalService.getAnimalById(this.animal.id);
     })
-   }
+  }
 
   ngOnInit() {
     this.animalService.animals.subscribe(animals => {
@@ -29,11 +29,11 @@ export class UpdateDocumentComponent implements OnInit {
       }
     });
   }
-  
-  update(){
+
+  update() {
     console.log(this.animal);
     this.animalService.addAnimal(this.animal);
-    
+    this.router.navigateByUrl('/animals');
   }
 
 }

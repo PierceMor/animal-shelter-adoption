@@ -13,7 +13,7 @@ export class AnimalService {
   public animalsByAge: Observable<any[]>;
 
   constructor(private db: AngularFirestore) {
-    this.itemsCollection = this.db.collection('animals');
+    this.itemsCollection = this.db.collection('/animals');
     this.getAllAnimals();
     this.getActiveAnimals();
     this.getAnimalsByAge();
@@ -32,7 +32,7 @@ export class AnimalService {
     this.activeAnimals = this.db.collection<Animal>('/animals', ref => ref.where('profile_active', '==', true)).valueChanges();
   }
 
-  addAnimal(animal: Animal){
+  addAnimal(animal: Animal) {
     // this.db.collection<Animal>('/animals').add(animal);
     this.itemsCollection.add(JSON.parse(JSON.stringify(animal)));
   }
