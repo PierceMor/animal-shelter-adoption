@@ -29,9 +29,9 @@ export class AnimalService {
       .valueChanges();
   }
 
-  getAllAnimals() {
-    this.allAnimals = this.db.collection<Animal>("/animals").valueChanges();
-  }
+  // getAllAnimals() {
+  //   this.allAnimals = this.db.collection<Animal>("/animals").valueChanges();
+  // }
 
   getActiveAnimals() {
     this.activeAnimals = this.db
