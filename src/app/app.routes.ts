@@ -6,9 +6,11 @@ import { AnimalInfoComponent } from './components/animal-info/animal-info.compon
 import { ContactComponent } from './components/contact/contact.component';
 import { LostComponent } from './components/lost/lost.component';
 import { UpdateDocumentComponent } from './components/update-document/update-document.component';
+import { HowToAdoptComponent } from './components/how-to-adopt/how-to-adopt.component';
 
 export const appRoutes: Routes = [
     { path: 'animals', component: AnimalListComponent },
+    { path: 'adopt', component: HowToAdoptComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'lost', component: LostComponent },
     { path: 'update', component: UpdateDocumentComponent },
