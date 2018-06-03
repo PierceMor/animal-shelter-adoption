@@ -1,0 +1,23 @@
+.carousel,
+.carousel:focus {
+  width: calc(100% + 48px) !important;
+  margin: 0 -24px 16px -24px !important;
+  outline: none;
+}
+
+#title-name {
+  font-size: 3rem;
+  font-family: Oswald;
+  color: #f9a11b;
+}
+
+.mat-card {
+  color: #444;
+  font-family: Oswald;
+  font-size: 1.5rem;
+  transition: all .2s ease-in-out;
+}
+
+span.mat-button-wrapper {
+  font-family: Oswald;
+}

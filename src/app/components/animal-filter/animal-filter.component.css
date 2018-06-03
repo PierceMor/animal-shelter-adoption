@@ -1,0 +1,16 @@
+#filter-row {
+  margin-top: 15px;
+}
+
+.mat-select,
+div.mat-select-value,
+mat-select,
+mat-select-placeholder,
+mat-select-value,
+.mat-form-field,
+span.mat-select-text,
+mat-option {
+
+  font-family: Oswald;
+  color: #444;
+}
