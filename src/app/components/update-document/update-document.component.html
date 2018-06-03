@@ -5,24 +5,19 @@
       <input matInput [(ngModel)]="animal.name" placeholder="Name">
     </mat-form-field>
 
-    {{ animal?.name }}
-
     <mat-form-field>
-      <input matInput placeholder="A1234" [(ngModel)]="animal.id" >
+      <input matInput placeholder="Pet ID" [(ngModel)]="animal.id" >
     </mat-form-field>
 
     <mat-form-field>
       <input matInput placeholder="Kennel #"  [(ngModel)]="animal.kennel" >
     </mat-form-field>
 
-
     <label>Sex: </label>
       <mat-radio-group [(ngModel)]="animal.sex">
         <mat-radio-button [value]="gender.MALE">Male</mat-radio-button>
         <mat-radio-button [value]="gender.FEMALE">Female</mat-radio-button>
       </mat-radio-group>
-
-      {{animal.sex}}
 
       <mat-form-field>
         <input matInput [matDatepicker]="dob" [(ngModel)]="animal.dob" placeholder="Date of Birth">
@@ -48,8 +43,6 @@
           <mat-radio-button [value]="energy.MODERATE">Moderate</mat-radio-button>
           <mat-radio-button [value]="energy.HIGH">High</mat-radio-button>
         </mat-radio-group>
-
-        {{animal.energy}}
 
         <label>Dog-Friendly: </label>
         <mat-radio-group [(ngModel)]="animal.dog_friendly" >

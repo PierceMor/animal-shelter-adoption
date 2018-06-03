@@ -24,11 +24,8 @@ export class AnimalService {
   }
 
   getAnimalById(id) {
-    this.animals = this.db.collection<Animal>('/animals', ref => ref.where('id', '==', id)).valueChanges();
-  }
-
-  getAllAnimals() {
-    this.allAnimals = this.db.collection<Animal>('/animals').valueChanges();
+    console.log('ID:', id);
+    this.animals = this.db.collection<Animal>('animals', ref => ref.where('id', '==', id)).valueChanges();
   }
 
   getActiveAnimals() {

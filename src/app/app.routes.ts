@@ -11,7 +11,8 @@ export const appRoutes: Routes = [
     { path: 'animals', component: AnimalListComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'lost', component: LostComponent },
-    { path: 'updateDocument', component: UpdateDocumentComponent },
+    { path: 'update', component: UpdateDocumentComponent },
+    { path: 'update/:tagId', component: UpdateDocumentComponent },
     { path: 'animals/:tagId', component: AnimalInfoComponent },
     { path: '**', redirectTo: '/animals', pathMatch: 'full' }
     

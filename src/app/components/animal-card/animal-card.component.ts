@@ -36,4 +36,8 @@ export class AnimalCardComponent implements OnInit {
 
     return Math.round(diff / one_day);
   }
+
+  editPet(){
+    this.router.navigateByUrl(`/update/${this.animal.id}`)
+  }
 }
