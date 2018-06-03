@@ -1,3 +1,8 @@
 .container {
   padding: 3rem;
 }
+
+a {
+  color: #444;
+  text-decoration: underline;
+}

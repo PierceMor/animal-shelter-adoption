@@ -6,4 +6,35 @@
 
 #title-name {
     font-size: 3rem;
+    font-family: Oswald;
 }
+
+/* #title-name:hover {
+    color: orangered;
+} */
+
+.mat-card {
+    color: #444;
+    font-family: Oswald;
+    font-size: 1.25rem;
+    transition: all .2s ease-in-out;
+
+}
+
+.mat-card:hover {
+  transform: scale(1.025);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.mat-card:hover > #title-name {
+    color: orangered;
+}
+/* 
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+} */
+
