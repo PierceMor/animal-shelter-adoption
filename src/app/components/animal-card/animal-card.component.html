@@ -15,7 +15,7 @@
           <strong>Gender: </strong>{{animal.sex === Gender.MALE ? 'Male' : 'Female'}}
         </div>
         <div>
-          <strong>DOB: </strong>{{animal.dob}}
+          <strong>DOB: </strong>{{animal.dob | date: 'shortDate'}}
         </div>
         <div>
           <strong>Kennel #: </strong>{{animal.kennel}}
@@ -26,10 +26,10 @@
       </div>
       <div class="col-6">
         <div>
-          <strong>Weight: </strong>{{animal.weight}}
+          <strong>Weight: </strong>{{animal.weight}} lbs
         </div>
         <div>
-          <strong>Days in Shelter: </strong>{{animal.intake_date}}
+          <strong>Days in Shelter: </strong>{{daysInShelter()}}
         </div>
         <div>
           <strong>Dog Friendly: </strong>{{animal.dog_friendly ? 'Yes' : 'No'}}
@@ -41,7 +41,7 @@
     </div>
     <div class="row mt-2">
       <div class="col-12">
-        <strong>Notes: </strong>{{animal.notes}}
+        {{animal.notes}}
       </div>
     </div>
   </mat-card-content>
