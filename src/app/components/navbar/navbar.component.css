@@ -1,4 +1,22 @@
+nav.navbar {
+    background: #484848;
+}
+
+a {
+    color: #fff;
+}
+
 img {   
     width: 75%;
     height: 5%
+}
+
+.navbar-brand {
+    height: 50px;
+    width: auto;
+    margin: 10px;
+}
+
+.nav-link, .nav-item {
+    padding-left: 20px;
 }
