@@ -1,5 +1,6 @@
 {
   "projects": {
-    "beta": "testproj-187418"
+    "beta": "testproj-187418",
+    "default": "testproj-187418"
   }
 }
