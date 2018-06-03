@@ -3,3 +3,7 @@
     margin: 0 -24px 16px -24px !important;
     outline: none;
 }
+
+#title-name {
+    font-size: 3rem;
+}
