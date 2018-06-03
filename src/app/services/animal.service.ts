@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Animal } from '../models/animal';
+import { QueryItem } from '../components/animal-filter/animal-filter.component';
 
 @Injectable()
 export class AnimalService {
@@ -34,8 +35,8 @@ export class AnimalService {
 
   getActiveAnimals() {
     this.activeAnimals = this.db
-      .collection<Animal>("/animals", ref =>
-        ref.where("profile_active", "==", true)
+      .collection<Animal>('/animals', ref =>
+        ref.where('profile_active', '==', true)
       )
       .valueChanges();
   }
@@ -45,11 +46,16 @@ export class AnimalService {
     this.itemsCollection.add(JSON.parse(JSON.stringify(animal)));
   }
 
-  filterAnimals(query: any) {
-    this.activeAnimals = this.db
-      .collection<Animal>("/animals", ref => ref
-          .where("ages", "<=", query.maxAge)
-          .where("ages", ">=", query.minAge)
-      .valueChanges();
+  filterAnimals(query: QueryItem[]) {
+    const collection = this.db.collection<Animal>('animals');
+    collection.ref.where('profile_active', '==', true);
+
+    query.forEach(element => {
+      if (element.value) {
+        collection.ref.where(element.field, element.operator, element.value);
+      }
+    });
+
+    this.activeAnimals = collection.valueChanges();
   }
 }

@@ -37,7 +37,7 @@ export class Animal {
 }
 
 export enum Energy_Level {
-    HIGH = 'orange',    
+    HIGH = 'orange',
     MODERATE = 'blue',
     LOW = 'green'
 }

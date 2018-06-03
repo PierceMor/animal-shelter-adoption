@@ -32,6 +32,7 @@ import { UpdateDocumentComponent } from './components/update-document/update-doc
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AnimalService } from './services/animal.service';
+import { AnimalFilterComponent } from './components/animal-filter/animal-filter.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AnimalService } from './services/animal.service';
     LostComponent,
     AnimalInfoComponent,
     AnimalCardComponent,
-    UpdateDocumentComponent
+    UpdateDocumentComponent,
+    AnimalFilterComponent
   ],
   imports: [
     BrowserModule,
