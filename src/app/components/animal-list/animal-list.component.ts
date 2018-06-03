@@ -56,8 +56,8 @@ export class AnimalListComponent implements OnInit {
   ];
 
   constructor(animalService: AnimalService) {
-    animalService.getAllAnimals();
     this.animals = animalService.activeAnimals;
+    // this.animals = animalService.getAnimalsByAge;
   }
 
   ngOnInit() { }
