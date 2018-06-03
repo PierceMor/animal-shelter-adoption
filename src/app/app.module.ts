@@ -28,11 +28,13 @@ import { AnimalInfoComponent } from './components/animal-info/animal-info.compon
 import { ContactComponent } from './components/contact/contact.component';
 import { LostComponent } from './components/lost/lost.component';
 import { AnimalCardComponent } from './components/animal-card/animal-card.component';
+
 import { UpdateDocumentComponent } from './components/update-document/update-document.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AnimalService } from './services/animal.service';
 import { AnimalFilterComponent } from './components/animal-filter/animal-filter.component';
+import { AnimalCardSingleComponent } from './components/animal-card-single/animal-card-single.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { AnimalFilterComponent } from './components/animal-filter/animal-filter.
     AnimalInfoComponent,
     AnimalCardComponent,
     UpdateDocumentComponent,
-    AnimalFilterComponent
+    AnimalFilterComponent,
+    AnimalCardSingleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 <div class="container-fluid">
-  <div class="row m-2 mb-0">
+  <!-- <div class="row m-2 mb-0"> -->
+  <div class="row" id='filter-row'>
     <div *ngFor="let item of queryItems" class="col-sm">
-      <div *ngIf="item.showFilter">
+      <div *ngIf="item.showFilter" id='filter-div'>
         <mat-form-field *ngIf="item.options">
           <mat-select [placeholder]="item.label" [(ngModel)]="item.value">
             <mat-option *ngFor="let option of item.options" [value]="option.value">
@@ -23,9 +24,9 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <!-- <div class="col-sm">
       <button mat-button (click)="applyFilters()">APPLY</button>
-    </div>
+    </div> -->
   </div>
 
 </div>
