@@ -41,10 +41,17 @@ export class AnimalService {
       .valueChanges();
   }
 
+
+
+  // creating a new function and not remaking 
   addAnimal(animal: Animal) {
     // this.db.collection<Animal>('/animals').add(animal);
     this.itemsCollection.add(JSON.parse(JSON.stringify(animal)));
   }
+
+
+
+
 
   filterAnimals(query: QueryItem[]) {
     const collection = this.db.collection<Animal>('animals');
