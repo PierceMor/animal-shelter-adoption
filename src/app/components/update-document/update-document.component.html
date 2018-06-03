@@ -81,15 +81,15 @@
 
     <input [(ngModel)]="animal.img" type="file" (change)="onFileChanged($event)" #fileInput class="d-none mt-2">
 
-    <button mat-raised-button class="mt-2">Upload Photo</button>
+    <!-- <button mat-raised-button class="mt-2">Upload Photo</button> -->
 
-    <button mat-raised-button class="mt-2" (click)="update();">Submit Form</button>
+    <!-- <button mat-raised-button class="mt-2" (click)="update();">Submit Form</button> -->
   </div>
 
   <div class="button-container">
 
     <br/>
-    <button mat-stroked-button (click)="fileInput.click()" class='update-button'>Select Picture</button>
+    <button mat-stroked-button class='update-button'>Select Picture</button>
     <br/>
     <br/>
     <button mat-stroked-button color=primary class="mt-2" (click)="update();" class='update-button'>Submit Form</button>
