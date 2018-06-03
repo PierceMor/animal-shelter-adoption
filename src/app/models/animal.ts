@@ -1,11 +1,11 @@
 export class Animal {
     id: string;
     name: string;
-    dob: string;
+    dob: Date;
     sex: string;
     kennel: string;
     weight: number;
-    intake_date: string;
+    intake_date: Date;
     energy_level: Energy_Level;
     attributes: string[];
     dog_friendly: boolean;
@@ -19,11 +19,11 @@ export class Animal {
     constructor(animal?: any) {
         this.id = (animal && animal.id) ? animal.id : '';
         this.name = (animal && animal.name) ? animal.name : '';
-        this.dob = (animal && animal.dob) ? animal.dob : '';
+        this.dob = (animal && animal.dob) ? new Date(animal.dob) : null;
         this.sex = (animal && animal.sex) ? animal.sex : '';
         this.kennel = (animal && animal.kennel) ? animal.kennel : null;
         this.weight = (animal && animal.weight) ? animal.weight : null;
-        this.intake_date = (animal && animal.intake_date) ? animal.intake_date : '';
+        this.intake_date = (animal && animal.intake_date) ? new Date(animal.intake_date) : null;
         this.energy_level = (animal && animal.energy_level) ? animal.energy_level : Energy_Level.MODERATE;
         this.attributes = (animal && animal.attributes) ? animal.attributes : [];
         this.dog_friendly = (animal && animal.dog_friendly) ? animal.dog_friendly : false;
@@ -37,7 +37,7 @@ export class Animal {
 }
 
 export enum Energy_Level {
-    HIGH = 'orange',
+    HIGH = 'orange',    
     MODERATE = 'blue',
     LOW = 'green'
 }

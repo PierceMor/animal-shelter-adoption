@@ -1,88 +1,81 @@
-
-<div class="container">
+<div class="container mt-2">
   <div class="example-container">
+
+    <mat-form-field>
+      <input matInput placeholder="Pet ID" [(ngModel)]="animal.id" disabled>
+    </mat-form-field>
+
     <mat-form-field>
       <input matInput [(ngModel)]="animal.name" placeholder="Name">
     </mat-form-field>
 
-    {{ animal?.name }}
+    <mat-form-field>
+      <input matInput placeholder="Kennel #" [(ngModel)]="animal.kennel">
+    </mat-form-field>
+
 
     <mat-form-field>
-      <input matInput placeholder="A1234" [(ngModel)]="animal.id" >
+      <input matInput [matDatepicker]="dob" [(ngModel)]="animal.dob" placeholder="Date of Birth">
+      <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+      <mat-datepicker #dob></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Kennel #"  [(ngModel)]="animal.kennel" >
+      <input matInput [matDatepicker]="intakeDate" [(ngModel)]="animal.intake_date" placeholder="Date Kenneled">
+      <mat-datepicker-toggle matSuffix [for]="intakeDate"></mat-datepicker-toggle>
+      <mat-datepicker #intakeDate></mat-datepicker>
     </mat-form-field>
 
+
+    <mat-form-field>
+      <input matInput placeholder="Weight" [(ngModel)]="animal.weight" type="number" class="example-right-align">
+      <span matSuffix>lbs</span>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <textarea matInput placeholder="Textarea" [(ngModel)]="animal.notes"></textarea>
+    </mat-form-field>
 
     <label>Sex: </label>
-      <mat-radio-group [(ngModel)]="animal.sex">
-        <mat-radio-button [value]="gender.MALE">Male</mat-radio-button>
-        <mat-radio-button [value]="gender.FEMALE">Female</mat-radio-button>
-      </mat-radio-group>
+    <mat-radio-group [(ngModel)]="animal.sex">
+      <mat-radio-button [value]="gender.MALE">Male</mat-radio-button>
+      <mat-radio-button [value]="gender.FEMALE">Female</mat-radio-button>
+    </mat-radio-group>
 
-      {{animal.sex}}
 
-      <mat-form-field>
-        <input matInput [matDatepicker]="dob" [(ngModel)]="animal.dob" placeholder="Date of Birth">
-        <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
-        <mat-datepicker #dob></mat-datepicker>
-      </mat-form-field>
 
-      <mat-form-field>
-          <input matInput [matDatepicker]="intakeDate" [(ngModel)]="animal.intake_date" placeholder="Date Kenneled">
-          <mat-datepicker-toggle matSuffix [for]="intakeDate"></mat-datepicker-toggle>
-          <mat-datepicker #intakeDate></mat-datepicker>
-        </mat-form-field>
-  
+    <label>Dog-Friendly: </label>
+    <mat-radio-group [(ngModel)]="animal.dog_friendly">
+      <mat-radio-button [value]="true">Yes</mat-radio-button>
+      <mat-radio-button [value]="false">No</mat-radio-button>
+    </mat-radio-group>
 
-      <mat-form-field>
-        <input matInput placeholder="Weight" [(ngModel)]="animal.weight" type="number" class="example-right-align">
-        <span matSuffix>lbs</span>
-      </mat-form-field>
+    <label>Cat-Friendly: </label>
+    <mat-radio-group [(ngModel)]="animal.cat_friendly">
+      <mat-radio-button [value]="true">Yes</mat-radio-button>
+      <mat-radio-button [value]="false">No</mat-radio-button>
+    </mat-radio-group>
 
-      <label>Energy Level: </label>
-        <mat-radio-group [(ngModel)]="animal.energy" >
-          <mat-radio-button [value]="energy.LOW">Low</mat-radio-button>
-          <mat-radio-button [value]="energy.MODERATE">Moderate</mat-radio-button>
-          <mat-radio-button [value]="energy.HIGH">High</mat-radio-button>
-        </mat-radio-group>
+    <label>House-Trained: </label>
+    <mat-radio-group [(ngModel)]="animal.house_trained">
+      <mat-radio-button [value]="true">Yes</mat-radio-button>
+      <mat-radio-button [value]="false">No</mat-radio-button>
+    </mat-radio-group>
 
-        {{animal.energy}}
 
-        <label>Dog-Friendly: </label>
-        <mat-radio-group [(ngModel)]="animal.dog_friendly" >
-          <mat-radio-button value="dogYes">Yes</mat-radio-button>
-          <mat-radio-button value="dogNo">No</mat-radio-button>
-        </mat-radio-group>
+    <label>Energy Level: </label>
+    <mat-radio-group [(ngModel)]="animal.energy_level">
+      <mat-radio-button [value]="energy.LOW">Low</mat-radio-button>
+      <mat-radio-button [value]="energy.MODERATE">Moderate</mat-radio-button>
+      <mat-radio-button [value]="energy.HIGH">High</mat-radio-button>
+    </mat-radio-group>
+    <!-- Need Picture Uploader. WTF -->
 
-        <label>Cat-Friendly: </label>
-        <mat-radio-group [(ngModel)]="animal.cat_friendly" >
-          <mat-radio-button value="catYes">Yes</mat-radio-button>
-          <mat-radio-button value="catNo">No</mat-radio-button>
-        </mat-radio-group>
+    <input [(ngModel)]="animal.img" type="file" (change)="onFileChanged($event)" #fileInput class="d-none mt-2">
+    <button mat-raised-button (click)="fileInput.click()">Select Picture</button>
 
-        <label>House-Trained: </label>
-        <mat-radio-group [(ngModel)]="animal.house_trained">
-          <mat-radio-button value="houseYes">Yes</mat-radio-button>
-          <mat-radio-button value="houseNo">No</mat-radio-button>
-        </mat-radio-group>
+    <button mat-raised-button class="mt-2" (click)="update();">Submit Form</button>
 
-<!-- Need Picture Uploader. WTF -->
-
-        <input 
-          style="display: none" [(ngModel)]="animal.img"
-          type="file" (change)="onFileChanged($event)" 
-          #fileInput>
-        <button mat-raised-button (click)="fileInput.click()">Select Picture</button>
-
-        <mat-form-field>
-          <textarea matInput placeholder="Textarea" [(ngModel)]="animal.notes" ></textarea>
-        </mat-form-field>
-
-        <button mat-raised-button (click) ="update();">Submit Form</button>
-
-  </div><br><br><br>
+  </div>
 </div>
-
