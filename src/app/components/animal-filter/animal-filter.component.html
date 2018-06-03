@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row m-2 mb-0">
+    <div *ngFor="let item of queryItems" class="col-sm">
+      <div *ngIf="item.showFilter">
+        <mat-form-field *ngIf="item.options">
+          <mat-select [placeholder]="item.label" [(ngModel)]="item.value">
+            <mat-option *ngFor="let option of item.options" [value]="option.value">
+              {{ option.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div *ngIf="!item.options">
+          <mat-form-field>
+            <mat-select [placeholder]="item.label + ' Condition'" [(ngModel)]="item.selectedOperator">
+              <mat-option *ngFor="let operator of item.operators" [value]="operator">
+                {{ operator }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field *ngIf="!item.options">
+            <input matInput [placeholder]="item.label" [(ngModel)]="item.value">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <button mat-button (click)="applyFilters()">APPLY</button>
+    </div>
+  </div>
+
+</div>
