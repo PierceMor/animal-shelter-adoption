@@ -52,19 +52,19 @@
         {{animal.energy}}
 
         <label>Dog-Friendly: </label>
-        <mat-radio-group [(ngModel)]="animal.dFriend" >
+        <mat-radio-group [(ngModel)]="animal.dog_friendly" >
           <mat-radio-button value="dogYes">Yes</mat-radio-button>
           <mat-radio-button value="dogNo">No</mat-radio-button>
         </mat-radio-group>
 
         <label>Cat-Friendly: </label>
-        <mat-radio-group [(ngModel)]="animal.cFriend" >
+        <mat-radio-group [(ngModel)]="animal.cat_friendly" >
           <mat-radio-button value="catYes">Yes</mat-radio-button>
           <mat-radio-button value="catNo">No</mat-radio-button>
         </mat-radio-group>
 
         <label>House-Trained: </label>
-        <mat-radio-group [(ngModel)]="animal.hTrained">
+        <mat-radio-group [(ngModel)]="animal.house_trained">
           <mat-radio-button value="houseYes">Yes</mat-radio-button>
           <mat-radio-button value="houseNo">No</mat-radio-button>
         </mat-radio-group>
@@ -78,7 +78,7 @@
         <button mat-raised-button (click)="fileInput.click()">Select Picture</button>
 
         <mat-form-field>
-          <textarea matInput placeholder="Textarea" [(ngModel)]="animal.note" ></textarea>
+          <textarea matInput placeholder="Textarea" [(ngModel)]="animal.notes" ></textarea>
         </mat-form-field>
 
         <button mat-raised-button (click) ="update();">Submit Form</button>
