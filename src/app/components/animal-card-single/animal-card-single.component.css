@@ -15,7 +15,7 @@
   color: #444;
   font-family: Oswald;
   font-size: 1.5rem;
-  transition: all .2s ease-in-out;
+  /* transition: all .2s ease-in-out; */
 }
 
 span.mat-button-wrapper {
