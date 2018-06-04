@@ -14,6 +14,22 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+## Deploy
+
+For first time use, initialize the Firebase CLI
+
+```
+firebase login
+firebase init # don't overwrite the existing firebase.json and chose yes to rewrite urls
+```
+
+After committing your changes and pushing to GitHub, deploy the app to Firebase:
+
+```
+ng build -prod base-href "https://testproj-187418.firebaseapp.com/"
+firebase deploy
+```
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
